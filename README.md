@@ -16,7 +16,6 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 
 ----
-<br>
 
 ### <u>**Statistically Significant Model Features**</u>
 
