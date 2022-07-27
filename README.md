@@ -39,12 +39,9 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |1_to_3.5_baths|-5.8721|0.0|
 |1_to_2_bedrooms|-25.5077|0.0|
 |half_bathroom|24.2692|0.0|
-|fips_code_6037.0|-16.7577|0.0|
+|fips_code_6037.0*|-16.7577|0.0|
 |fips_code_6059.0|20.5924|0.0|
 |fips_code_6111.0|8.6164|0.0|
-|county_id_1286|20.5924|0.0|
-|county_id_2061|8.6164|0.0|
-|county_id_3101|-16.7577|0.0|
 |purchase_month_April|6.6364|0.0|
 |purchase_month_January|-4.3544|0.0|
 |purchase_month_July|5.4294|0.0|
@@ -52,6 +49,9 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |purchase_month_September|4.1576|0.0|
 |purchase_month_March|-2.5398|0.01|
 |purchase_month_August|-2.6040|0.01|
+
+
+*fips_code_6037 (LA, California) not selected in features for modeling* *
 
 <br>
 
@@ -66,8 +66,8 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |Model|Train RMSE|Validate RMSE|
 |----|----|----|
 |linear regression|178296.33|178914.2|
-|lasso lars|178351.31|178965.79|
-|tweedie regressor|187312.47|187368.63|
+|lasso lars|17298.37|178915.13|
+|tweedie regressor|187359.38|187427.43|
 |baseline mean|205092.78|204730.82|
 
 <br>
