@@ -129,7 +129,6 @@ def clean_months(df):
 def get_dummy_cols(df):
     dummy_df = pd.get_dummies(df[[
                 'fips_code', \
-                'county_id', \
                 'purchase_month']])
 
     return df
@@ -141,6 +140,7 @@ def drop_after_dummy(df):
     df = df.drop(columns = [
         'purchase_date',
         'year_built',
+        'county_id',
         'bedroom_count', 
         'bathroom_count'])
     
