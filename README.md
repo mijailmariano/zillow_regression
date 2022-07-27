@@ -49,9 +49,9 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
     </tr>
     <tr>
       <td></td>
-      <td>ChiSquared</td>
-      <td>6</td>
-      <td>0.00</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td></td>
