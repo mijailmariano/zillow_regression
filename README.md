@@ -185,7 +185,7 @@ living_sq_feet:
 - home has 1-2 bedrooms
 
 half_bathroom:
-- home has min. of 1 half bathroom (contains min. sink & toilet only)
+- home has min. of 1 half bathroom (contains sink and/or toilet only)
 
 fips_code_6037:
 - federal info. processing standard code (LA, California)
