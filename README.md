@@ -52,7 +52,7 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 *fips_code_6037 (LA, California) not selected in final model features* *
 
-<br>
+----
 
 ### **<u>Model Results</u>**
 
