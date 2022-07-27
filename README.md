@@ -128,7 +128,7 @@ Below is a file breakdown on how to best navigate this GitHub repository and the
 
 3. **acquire.py** 
   
-   Python module file that imports the neccessary Zillow real-estate dataset and subsequent features outputs for modeling phase in the analysis. 
+   Python module file that imports the neccessary Zillow real-estate dataset and subsequent features outputs for modeling phase in the analysis. If just using or running the final_report.ipynb file, then this corresponding acquire.py file should suffice and the prepare.py file is not needed.
    
    **Note:** you must first import the initial Zillow dataset from MySQL. When passed in the "acquire.get_zillow_dataset()" function, the data is then stored locally as a .csv file - then referenced as a pd.Dataframe thereafter. 
 
