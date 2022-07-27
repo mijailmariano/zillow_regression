@@ -58,8 +58,8 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 ### **<u>Model Results</u>**
 
 * Training R-squared w/Linear Regression: 0.2442
-* Training R-squared w/Lasso Lars: 0.2438
-* Training R-squared w/Tweedie Regressor: 0.1659
+* Training R-squared w/Lasso Lars: 0.2442
+* Training R-squared w/Tweedie Regressor: 0.1655
 
 <br>
 
