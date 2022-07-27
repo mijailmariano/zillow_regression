@@ -20,7 +20,7 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 ### <u>**Statistically Significant Model Features**</u>
 
-<br>
+</br>
 
 <u>**``Continuous Features:``**</u>
 
