@@ -87,7 +87,7 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 Overall, the linear regression model performed at ~16% better accuracy than a baseline mean home value predictor. Though not entirely conclusive of a home's tax assessed value - I believe this model may be able to handle fluctuations in the overall market particularly well. 
 
-By using "binned" or categorical features in common sought after home characteristics (e.g., bedrooms, bathrooms) to determine a home's value, the model helps to handle external factors such as seasonality/seasonal effects, cultural preferences, or demand shocks that can undoubtedly impact house prices with different  in relatively short periods.
+By using "binned" or categorical features in traditionally sought after home characteristics (e.g., bedrooms, bathrooms) to determine a home's value, the model helps to handle external factors such as seasonality/seasonal effects, cultural preferences, or demand shocks that can undoubtedly impact the number of 'for sale' homes available and subsquently, house prices in relatively short periods.
 
 
 **``Recommendations:``**
