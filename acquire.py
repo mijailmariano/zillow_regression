@@ -127,7 +127,7 @@ def clean_months(df):
 
 # generating dummy variables
 def get_dummy_cols(df):
-    dummy_df = pd.get_dummies(df[[
+    dummdf = pd.get_dummies(df[[
                 'fips_code', \
                 'purchase_month']])
 
@@ -157,7 +157,7 @@ def establish_baseline(train, validate):
     validate_rmse = sqrt(mean_squared_error(validate.home_value, validate.baseline))
 
     print('Train baseline RMSE: {:.2f}'.format(train_rmse))
-    print('Validation baseline RMSE: {:.2f}'.format(validate_rmse))
+    print('dfation baseline RMSE: {:.2f}'.format(validate_rmse))
 
     train = train.drop(columns = "baseline")
     validate = validate.drop(columns = "baseline")
@@ -275,7 +275,7 @@ def generate_df(model, x_val, feature_lst, y_val):
     # concatenating the two tables
     df = pd.concat([X_var, y_var], axis = 1)
 
-    # generating validation data baseline predictions
+    # generating dfation data baseline predictions
     baseline_mean_predictions = round(y_val.mean(), 2)
     df["baseline_mean_predictions"] = baseline_mean_predictions
 
@@ -303,7 +303,7 @@ def get_validate_report():
 # function retrieves final readout on test dataset
 def final_rmse():
     final_rmse = pd.DataFrame({
-    "Test": ["Baseline", "Train", "Validate", "Final"],
+    "Test": ["Baseline", "Train", "validate", "Final"],
     "RMSE": [204730.70,178296.33,178914.20,177111.14],
     "Relative Diff.": [0, .15, 0, .01]})
 
@@ -339,7 +339,7 @@ This function also shows the line-of-best-fit for ea. plotted variables'''
 def plot_variable_pairs1(df):
     plt.figure(figsize = (15, 6))
     sns.set(font_scale = 1)
-    sns.pairplot(df.sample(1000, random_state = 123), corner = True, kind="reg", diag_kind = "kde", plot_kws={'line_kws':{'color':'red'}})
+    sns.pairplot(df.sample(1500, random_state = 123), corner = True, kind="reg", diag_kind = "kde", plot_kws={'line_kws':{'color':'red'}})
     
     plt.show()
 
@@ -351,8 +351,8 @@ def plot_variable_pairs2(train_df, x_features_lst):
         sns.set(font_scale = 1)
 
         # plotting ea. feature against target variable with added "independent jitter" for easier visual
-        ax = sns.regplot(train_df[col].sample(2000), \
-        train_df["home_value"].sample(2000), \
+        ax = sns.regplot(train_df[col].sample(1500), \
+        train_df["home_value"].sample(1500), \
         x_jitter = 1, # adding superficial noise to independent variables
         line_kws={
             "color": "red", 'linewidth': 1.5})
@@ -442,8 +442,8 @@ def features_and_target(df):
         sns.set(font_scale = 1)
 
         # plotting ea. feature against target variable with added "independent jitter" for easier visual
-        ax = sns.regplot(df[[col]].sample(2000), \
-        df["home_value"].sample(2000), \
+        ax = sns.regplot(df[[col]].sample(1500), \
+        df["home_value"].sample(1500), \
         
         # adding superficial noise to independent variables to help visualize the individual plots
         x_jitter = 1, \
@@ -500,11 +500,11 @@ def compare_sum_of_squares(SSE_baseline, SSE_model):
 '''Function that takes in y_variable and y_hat (predictions) and returns whether or not the created model 
 has a lower sum of squared error than baseline'''
 def better_than_baseline(y, y_hat):
-    df_model = y.sample(1000, random_state = 123) - y_hat.sample(1000, random_state = 123)
+    df_model = y.sample(1500, random_state = 123) - y_hat.sample(1500, random_state = 123)
     df_model["residual^2"] = df_model.round(2) ** 2
 
     # calculating a baseline
-    baseline = round(y.sample(1000, random_state = 123).mean(), 2)
+    baseline = round(y.sample(1500, random_state = 123).mean(), 2)
 
     # creating an empty DataFrame with n_rows as y
     df = pd.DataFrame(index = range(len(y)))
@@ -617,15 +617,15 @@ def plot_model_residuals(df):
     # plotting linear model
     plt.scatter(df['home_value'].sample(300, random_state = 123), 
                 df['linear_predictions'].sample(300, random_state = 123) - df['home_value'].sample(300, random_state = 123), 
-                alpha=0.5,
-                color='red', 
+                alpha = 0.5,
+                color='red',
                 s=100, 
                 label='Linear Regression')
 
     # plotting lasso lars model
     plt.scatter(df['home_value'].sample(300, random_state = 123), 
                 df['lars_predictions'].sample(300, random_state = 123) - df['home_value'].sample(300, random_state = 123), 
-                alpha=0.5,
+                alpha = 0.5,
                 color='yellow',
                 s=100, 
                 label='Lasso Lars')
@@ -633,7 +633,7 @@ def plot_model_residuals(df):
     # plotting tweedie model
     plt.scatter(df['home_value'].sample(300, random_state = 123), 
                 df['glm_predictions'].sample(300, random_state = 123) - df['home_value'].sample(300, random_state = 123), 
-                alpha=0.5,
+                alpha = 0.5,
                 color='green',
                 s=100, 
                 label='Tweedie Regressor')
@@ -643,70 +643,42 @@ def plot_model_residuals(df):
     plt.ylabel('Residual Error')
     plt.title('Model Residual Plot')
 
-    plt.show()
-
-
 
 # plotting actual home values, baseline_mean_predictions predictions, and model predictions
 def plot_models(df):
-    plt.figure(figsize = (16, 10))
-    plt.plot(df['home_value'].sample(300, 
-            random_state = 123), 
-            df['baseline_mean_predictions'].sample(300, random_state = 123), 
-            alpha=0.5,
-            color='red', 
-            ls = ':', 
-            label='_nolegend_')
+    plt.figure(figsize=(16,8))
 
-    # plotting home value line of best fit
-    plt.plot(df['home_value'].sample(300, random_state = 123), 
-            df['home_value'].sample(300, random_state = 123), 
-            alpha=0.5,
-            color='purple', 
-            label='_nolegend_')
+    plt.plot(df['home_value'], df['baseline_mean_predictions'], alpha=0.5,
+         color='gray', label='_nolegend_')
+    plt.plot(df['home_value'], df['home_value'], alpha=0.5,
+            color='blue', label='_nolegend_')
 
-    # linear model plot
-    plt.scatter(df['home_value'].sample(300, random_state = 123), 
-                df['linear_predictions'].sample(300, random_state = 123), 
-                color='red',
-                s=100,
-                label='Linear Regression')
-
-    # lasso lars plot
-    plt.scatter(df['home_value'].sample(300, random_state = 123), 
-                df['lars_predictions'].sample(300, random_state = 123), 
-                color='yellow', 
-                s=100, 
-                label='Lasso Lars')
-
-    # tweedie/glm plot
-    plt.scatter(df['home_value'].sample(300, random_state = 123), 
-                df['glm_predictions'].sample(300, random_state = 123), 
-                color = 'green',
-                s=100, 
-                label='Tweedie Regressor')
-
+    plt.scatter(df['home_value'].sample(300, random_state = 123), df['linear_predictions'].sample(300, random_state = 123), alpha=0.5,
+                color='red', s=100, label='Linear Regression')
+    
+    plt.scatter(df['home_value'].sample(300, random_state = 123), df['lars_predictions'].sample(300, random_state = 123), alpha=0.5,
+                color='yellow', s=100, label='Lasso Lars')
+    
+    plt.scatter(df['home_value'].sample(300, random_state = 123), df['glm_predictions'].sample(300, random_state = 123), alpha=0.5,
+                color='green', s=100, label='Tweedie Regressor')
 
     plt.legend()
     plt.xlabel("Actual Home Value")
     plt.ylabel('Predicted Home Value')
     plt.title('Actual Home Values vs Model Predicted Home Values')
 
-    plt.show()
-
 def model_distributions(df):
     # Distribution of my model predictions (linear & tweedie)
-    plt.figure(figsize = (16, 8))
-    sns.set(style = "darkgrid")
+    plt.figure(figsize=(16,8))
+    plt.hist(df['home_value'], color='blue', alpha=0.5, label='Actual Home Value')
 
-    plt.hist(df['home_value'], color='blue', alpha=0.4, label='Actual Home Value')
-    plt.hist(df['linear_predictions'], color='red', alpha=0.4, label='Linear Regression')
-    plt.hist(df['lars_predictions'], color='green', alpha=0.4, label='Laso Lars')
+    plt.hist(df['linear_predictions'], color='red', alpha=0.5, label='Linear Regression')
 
+    plt.hist(df['lars_predictions'], color='yellow', alpha=0.5, label='Lasso Lars')
+
+    # plt.hist(df['glm_predictions'], color='green', alpha=0.5, label='Tweedie Regressor')
 
     plt.xlabel('Home Value')
     plt.ylabel('Frequency')
     plt.title('Frequency of Home Values by Predictive Model')
     plt.legend()
-
-    plt.show()

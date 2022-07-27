@@ -26,9 +26,9 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 |feature|corr. coefficient| p-value|
 |----|----|----|
-|home_age|0.4589|0.0|
+|home_age|-0.2707|0.0|
 |latitude|-0.1389|0.0|
-|living_sq_feet|-0.2707|0.0|
+|living_sq_feet|0.4589|0.0|
 
 <br>
 
@@ -82,6 +82,37 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |Validate|178914.20|0.00|
 |Test (final)|177111.14|0.01|
 
+----
+
+**<u>``Analysis Summary``</u>**
+
+Overall, the linear regression model performed at ~16% better accuracy than a baseline mean home value predictor. Though not entirely conclusive of a home's tax assessed value - I believe this model may be able to handle fluctuations in the overall market particularly well. 
+
+By using "binned" or categorical features in common sought after home characteristics (e.g., bedrooms, bathrooms) to determine a home's value, the model helps to handle external factors such as seasonality/seasonal effects, cultural preferences, or demand shocks that can undoubtedly impact house prices with different  in relatively short periods.
+
+
+**``Recommendations:``**
+
+1. Create a **"Real-estate Training Program** that aims at helping Real-estate Brokers/Agents, Marketing, and Real-estate Consultancy teams to familiarize themselves with seasonal patterns in their local areas. By offering this program to real-estate professionals who are often closest to both sellers and buyers, it would help them to:
+
+ - Better advise their clients on the most optimal periods to enter the market (purchase/sell their home)
+ - More quickly recognize housing market shocks and make real-time decisions that help to normalize home value prices 
+
+2. Use our online, mobile application, and advisory platforms to promote renovations of not just older homes, but smaller spaces and potentially converting them to **half-baths**. This feature along with more finished living space appears to be appealing characteristics for home buyers trading in traditional features such as the number of bedrooms or bathrooms for more efficient and univarsal home space.
+
+----
+
+**Looking Ahead (next steps):**
+
+- improve the model's predictive accuracy by identifying, testing, and including other potential home market factors 
+    - regional cost-of-living indices
+    - unemployment rates
+    - educational/school ratings
+    - crime rates
+    - home design styles
+<br>
+- calculate home/area distance to nearby metropolitan cities, park/recreational areas, schools, hospitals/hospice centers, etc.
+- parse out fips codes into more distinct locations either by towns/villages/neighborhoods or exact cities 
 
 ----
 **<u>Repository Roadmap:</u>**
