@@ -51,7 +51,7 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |purchase_month_August|-2.6040|0.01|
 
 
-*fips_code_6037 (LA, California) not selected in features for modeling* *
+*fips_code_6037 (LA, California) not selected in final model features* *
 
 <br>
 
