@@ -196,12 +196,13 @@ def age_of_homes(df):
 
 # function to create and plot a new column/home purchase by 2017 month
 def get_months_and_plot(df):
+    plt.figure(figsize = (16, 8))
     # creating a lambda function to isolate the dates by month and year
     df['purchase_month'] = df['purchase_date'].map(lambda dt: dt.strftime('%Y-%m'))
 
     grouped_df = df.sort_values("purchase_month").groupby('purchase_month').size().to_frame("count").reset_index()
 
-    sns.set(font_scale = .5, style = "darkgrid")
+    sns.set(font_scale = 1, style = "darkgrid")
     ax = sns.countplot(x = "purchase_month",
                     data = df,
                     order = grouped_df["purchase_month"],
@@ -259,10 +260,9 @@ def scaled_data(df):
         'latitude',
         'home_age']
 
-    scaler = RobustScaler()
-
+    scaler = RobustScaler() 
     # fitting and transforming cols to needed scaled values
-    df[scaled_cols] = scaler.fit_transform(df[scaled_cols])
+    df[scaled_cols] = scaler.transform(df[scaled_cols])
 
     # returning newly created dataframe with scaled data
     return df
