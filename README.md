@@ -109,8 +109,9 @@ By using "binned" or categorical features in traditionally sought after home cha
     - educational/school ratings
     - crime rates
     - home design styles
-<br>
+<br></br>
 - Calculate home/area distance to nearby metropolitan cities, park/recreational areas, schools, hospitals/hospice centers, etc.
+  
 - Parse out fips codes into more distinct locations either by towns/villages/neighborhoods or exact cities 
 
 ----
