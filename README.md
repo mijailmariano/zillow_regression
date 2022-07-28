@@ -92,7 +92,7 @@ By using "binned" or categorical features in traditionally sought after home cha
 
 **``Recommendations:``**
 
-1. Create a **"Real-estate Training Program** that aims at helping Real-estate Brokers/Agents, Marketing, and Real-estate Consultancy teams to familiarize themselves with seasonal patterns in their local areas. By offering this program to real-estate professionals who are often closest to both sellers and buyers, it would help them to:
+1. Create a **Real-estate Training Program** that aims at helping Real-estate Brokers/Agents, Marketing, and Real-estate Consultancy teams to familiarize themselves with seasonal patterns in their local areas. By offering this program to real-estate professionals who are often closest to both sellers and buyers, it would help them to:
 
  - Better advise their clients on the most optimal periods to enter the market (purchase/sell their home)
  - More quickly recognize housing market shocks and make real-time decisions that help to normalize home value prices 
@@ -103,15 +103,15 @@ By using "binned" or categorical features in traditionally sought after home cha
 
 **Looking Ahead (next steps):**
 
-- improve the model's predictive accuracy by identifying, testing, and including other potential home market factors 
+- Improve the model's predictive accuracy by identifying, testing, and including other potential home market factors 
     - regional cost-of-living indices
     - unemployment rates
     - educational/school ratings
     - crime rates
     - home design styles
 <br>
-- calculate home/area distance to nearby metropolitan cities, park/recreational areas, schools, hospitals/hospice centers, etc.
-- parse out fips codes into more distinct locations either by towns/villages/neighborhoods or exact cities 
+- Calculate home/area distance to nearby metropolitan cities, park/recreational areas, schools, hospitals/hospice centers, etc.
+- Parse out fips codes into more distinct locations either by towns/villages/neighborhoods or exact cities 
 
 ----
 **<u>Repository Roadmap:</u>**
@@ -218,7 +218,7 @@ half_bathroom:
 - home has min. of 1 half bathroom (contains sink and/or toilet only)
 
 fips_code_6037:
-- federal info. processing standard code (LA, California)
+- federal info. processing standard code (Los Angeles, California)
 
 fips_code_6059:
 - federal info. processing standard code (Orange, California)
