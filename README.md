@@ -1,6 +1,6 @@
 ## Machine Learning: Linear Regression Model
 
-#### Zillow Dataset Analysis
+### Zillow Dataset Analysis
 ----
 
 ##### Mijail Q. Mariano
@@ -8,7 +8,7 @@
 
 <br>
 
-**<u>Project Description & Goals:</u>**
+### **<u>Project Description & Goals:</u>**
 
 The purpose of this analysis is to explore a Zillow Real Estate dataset through visualizations and statistical tests to identify potential features that can accurately predict future tax assessed home values.
 
@@ -16,12 +16,32 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 
 ----
+#### **<u>Home Value Exploration Questions & Hypothesis:</u>**
+
+**1. Does the home location matter?**
+
+I presume location matters in determining the final value/price of a home, as there could be economic factors (e.g., cost-of-living/inflationary considerations) that may be considered when assessing a home's relative value. Additionally, homes typically closer to metropolitan or labor producing areas may be more costly than rural/less-labor promoted areas.
+
+**2. Does the size of the home matter?**
+
+I presume that the larger the home (measured by sq. feet), the higher the home value will be. 
+
+A larger home can be more attractive to home buyers since the space can act as both an initial family home, but also their “forever home”. Meaning that people who might not initially have a use for the additional space - may see the potential benefits of having it when they are ready to either 1. expand their family/or find use for the space or 2. View the space as a future investment for a buyer willing to pay the same or more for their spacious home in the future (investment thinking).
+
+
+**3. Does the home purchase period matter?**
+
+I presume that the period when a home is purchased or placed on the market will matter. Home buyers may be more reluctant to purchase a home in the colder regional months (e.g., typically winter) when the weather may be less favorable for moving. 
+
+There may also be *renter factors or periods in the year when leases end and renters make the decision to purchase a home, subsequently driving more buyers to the market and thus potentially increasing home sale values. 
+
+----
 
 ### <u>**Statistically Significant Model Features**</u>
 
 </br>
 
-<u>**``Continuous Features:``**</u>
+<u>**``Continuous Features/Variables:``**</u>
 
 |feature|corr. coefficient| p-value|
 |----|----|----|
@@ -31,7 +51,7 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 <br>
 
-<u>**``Discrete/Categorical Features:``**</u>
+<u>**``Discrete/Categorical Features/Variables:``**</u>
 
 |feature|t-score|p-value|
 |----|----|----|
@@ -71,7 +91,10 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 
 <br>
 
+<center>
+
 <u>**``Linear Regression Deployment and Performance Through Test Dataset``**</u>
+
 
 
 |Linear Model Performance|RMSE|Relative % Difference|
@@ -81,27 +104,31 @@ After exploring the Zillow dataset I design a machine learning (ML) model using 
 |Validate|178914.20|0.00|
 |Test (final)|177111.14|0.01|
 
+</center>
+
 ----
 
-**<u>``Analysis Summary``</u>**
+### **<u>``Analysis Summary``</u>**
 
 Overall, the linear regression model performed at ~16% better accuracy than a baseline mean home value predictor. Though not entirely conclusive of a home's tax assessed value - I believe this model may be able to handle fluctuations in the overall market particularly well. 
 
 By using "binned" or categorical features in traditionally sought after home characteristics (e.g., bedrooms, bathrooms) to determine a home's value, the model helps to handle external factors such as seasonality/seasonal effects, cultural preferences, or demand shocks that can undoubtedly impact the number of 'for sale' homes available and subsquently, house prices in relatively short periods.
 
 
-**``Recommendations:``**
+### **``Recommendations:``**
 
 1. Create a **Real-estate Training Program** that aims at helping Real-estate Brokers/Agents, Marketing, and Real-estate Consultancy teams to familiarize themselves with seasonal patterns in their local areas. By offering this program to real-estate professionals who are often closest to both sellers and buyers, it would help them to:
 
  - Better advise their clients on the most optimal periods to enter the market (purchase/sell their home)
  - More quickly recognize housing market shocks and make real-time decisions that help to normalize home value prices 
 
-2. Use our online, mobile application, and advisory platforms to promote renovations of not just older homes, but smaller spaces and potentially converting them to **half-baths**. This feature along with more finished living space appears to be appealing characteristics for home buyers trading in traditional features such as the number of bedrooms or bathrooms for more efficient and univarsal home space.
+2. Use our online, mobile application, and advisory platforms to promote renovations of older homes, specifically smaller spaces where they may gain to benefit converting these spaces into **half-baths**. 
+
+   - My analysis showed that homes with half-baths along with having **more finished living space** appear to be attractive characteristics for home buyers who may be trading in traditionally sought after home characteristis such as the number of bedrooms or bathrooms for more efficient and univarsal home space.
 
 ----
 
-**Looking Ahead (next steps):**
+### **Looking Ahead (next steps):**
 
 - Improve the model's predictive accuracy by identifying, testing, and including other potential home market factors 
     - regional cost-of-living indices
@@ -112,10 +139,10 @@ By using "binned" or categorical features in traditionally sought after home cha
 <br></br>
 - Calculate home/area distance to nearby metropolitan cities, park/recreational areas, schools, hospitals/hospice centers, etc.
   
-- Parse out fips codes into more distinct locations either by towns/villages/neighborhoods or exact cities 
+- Parse out fips codes into more distinct locations either by cities/towns/villages/or even exact neighborhoods
 
 ----
-**<u>Repository Roadmap:</u>**
+### **<u>Repository Roadmap:</u>**
 
 Below is a file breakdown on how to best navigate this GitHub repository and the subsequent analysis. All code, data synthesis, and models can be found here for future reproduction or improvements:
 
@@ -140,7 +167,7 @@ Below is a file breakdown on how to best navigate this GitHub repository and the
 <br>
 
 ----
-**<u>Initial Questions for Hypothesis Testing:</u>**
+### **<u>Initial Questions for Hypothesis Testing:</u>**
 
 <br>
 
