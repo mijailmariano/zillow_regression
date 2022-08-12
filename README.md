@@ -10,9 +10,9 @@
 
 ### **<u>Project Description & Goals:</u>**
 
-The purpose of this analysis is to explore a Zillow Real Estate dataset through visualizations and statistical tests to identify potential features that can accurately predict future tax assessed home values.
+The purpose of this analysis is to explore a Zillow Real Estate dataset through visualizations and statistical tests and to identify potential real estate features that can help in accurately predicting tax assessed home values.
 
-After exploring the Zillow dataset I design a machine learning (ML) model using regression techniques that predicts a home's tax assessed value with **~16% greater accuracy** than a baseline mean estimate.
+After exploring the Zillow dataset I design a machine learning (ML) model using regression techniques that predicts home tax assessed value with **~16% greater accuracy** than a baseline mean estimate.
 
 
 ----
